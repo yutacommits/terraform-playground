@@ -14,6 +14,7 @@ Run the setup script and export AWS variables
 
 ## Commands
 
+
 Start of new project / initialize working directory
 
     terraform init
@@ -25,6 +26,14 @@ Format/lint
 Changes to be made
 
     terraform plan
+
+Create or update infrastructure
+
+    terraform apply
+
+Running from subdirectory
+
+    terraform -chdir=<dirname> {init,plan,apply}
 
 Dependency graph
 
@@ -53,9 +62,9 @@ resource "<PROVIDER>_<TYPE>" <NAME> {
 }
 ```
 
-PROVIDER: name of the provider e.g. AWS
-TYPE: type of resource to create in that provider e.g. instance
-NAME: an identifier you can use throughout the terraform code
+- PROVIDER: name of the provider e.g. AWS
+- TYPE: type of resource to create in that provider e.g. instance
+- NAME: an identifier you can use throughout the terraform code
 
 Resource attribute reference
 
@@ -72,11 +81,11 @@ variable "NAME" {
 ```
 
 parameters that can be used:
-* description: document how variable will be used
-* default: default value
-* type: type constraints e.g. string, number, bool, list
-* validation: validation rule e.g. min/max
-* sensitive: don't log when running plan or apply, accepts bool
+- description: document how variable will be used
+- default: default value
+- type: type constraints e.g. string, number, bool, list
+- validation: validation rule e.g. min/max
+- sensitive: don't log when running plan or apply, accepts bool
 
 Using the variable
 
